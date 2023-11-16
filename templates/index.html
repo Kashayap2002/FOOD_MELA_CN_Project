@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leftover Food Marketplace</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Set a background color */
+            background-image: url("{{ url_for('static', filename='background.jpg') }}"); /* Background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+
+        .meal-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 20px; /* Add margin around the entire meal section */
+        }
+
+        .meal {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 30%; /* Adjust the width as needed */
+            max-width: 300px; /* Set a maximum width for the containers */
+        }
+
+        .meal img {
+            max-width: 100%;
+            height: 200px; /* Set a fixed height for all images */
+            width: 100%; /* Make images fill the entire width of their containers */
+        }
+
+        /* CSS animation for scrolling text */
+        .scrolling-text {
+            white-space: nowrap;
+            overflow: hidden;
+            animation: scrolling 10s linear infinite;
+        }
+
+        @keyframes scrolling {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header style="background: linear-gradient(135deg, rgba(178, 15, 15, 0.7), rgba(255, 0, 0, 0.7)); padding: 20px; display: flex; flex-direction: column; align-items: center;">
+        <h1 style="font-family: 'Arial', sans-serif; font-size: 36px; font-weight: bold; text-shadow: 2px 2px 4px #000; color: white; margin-bottom: 5px;">Welcome To The Food Mela</h1>
+        <p style="margin-top: 5px; color: white;">Find delicious meals at lower prices from local restaurants.</p>
+    </header>
+    
+    
+
+    <section class="available-meals">
+        <h2 class="scrolling-text">Available Meals: FAARUZI, 99 North, 7 Life</h2>
+
+        <div class="meal-container">
+            <div class="meal">
+                <img src="{{ url_for('static', filename='faaruzi.jpg') }}" alt="Meal 1">
+                <h3>FAARUZI</h3>
+                <p>Multi-cuisine Restaurant</p>
+                <p>Price: Rs 80/- per plate</p>
+                <button><a href="{{ url_for('checkout') }}" class="btn">Add to cart</a></button>
+            </div>
+
+            <div class="meal">
+                <img src="{{ url_for('static', filename='99north.jpeg') }}" alt="Meal 2">
+                <h3>99 North</h3>
+                <p>Indian | Chinese | Tandoor</p>
+                <p>Price: Rs 80/- per plate</p>
+                <button><a href="{{ url_for('checkout') }}" class="btn">Add to cart</a></button>
+            </div>
+
+            <div class="meal">
+                <img src="{{ url_for('static', filename='7life.jpg') }}" alt="Meal 3">
+                <h3>7 Life</h3>
+                <p>South Indian, Chinese, Seafood, North Indian, Mughlai, Biryani, Desserts, Beverages</p>
+                <p>Price: Rs 80/- per plate</p>
+                <button><a href="{{ url_for('checkout') }}" class="btn">Add to cart</a></button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Leftover Food Marketplace</p>
+    </footer>
+</body>
+</html>

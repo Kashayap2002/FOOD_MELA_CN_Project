@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Success - Leftover Food Marketplace</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='checkstyle.css') }}">
+    <style>
+        /* Your existing styles here */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("{{ url_for('static', filename='background_image.jpg') }}");
+            background-color: #f0f0f0;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(178, 15, 15, 0.7), rgba(255, 0, 0, 0.7));
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin: 0;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        section {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #b20f0f;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #b20f0f;
+            font-weight: bold;
+        }
+
+   
+        footer {
+            text-align: center;
+            padding: 14px;
+            background-color: rgba(82, 35, 31, 0.7); /* Translucent background color for footer */
+            color: white;
+            position: relative; /* Add relative positioning to allow absolute positioning of contact details */
+        }
+        
+
+        .translucent-box {
+            background-color: rgba(255, 255, 255, 0.7); /* Adjust the transparency as desired */
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 0px;
+        }
+        
+        .translucent-box h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .translucent-box p {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .translucent-box a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Order Confirmed</h1>
+    </header>
+
+    <br>
+    <br>
+    <br>
+    <section>
+        <h2>Your Order Details</h2>
+        <p>Thank you for choosing The Food Mela. Here's a summary of your order:</p>
+        <br>
+   
+        <br>
+        <p>Name: {{ name }}</p>
+
+        <p>Contact Number: {{ address }}</p>
+
+        <p>Location: Infocity</p>
+
+        <p>Buffet Time: 9 PM to 10 PM</p>
+
+        <p>Your Unique Coupon Code: <span id="coupon"></span></p>
+
+        <br>
+        <br>
+        <br>
+        <p>Payment of Rs 80 will be collected at the counter upon food collection.</p>
+        <p>To collect your food, kindly take a screenshot of this page and present it at the counter.</p>
+    </section>
+
+
+    <br>
+    <br>
+    <br> <br>
+    <br>
+    <br>
+    <div class="translucent-box" id="contact-details">
+        <h2>Contact Us</h2>
+        <p>Email: foodmela15@gmail.com</p>
+        <p>Phone: +91 9660011227</p>
+        <p>For any queries, collaborations, or feedback, feel free to reach out to us! We're always open to discussions and opportunities to make a positive impact together.</p>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Leftover Food Marketplace</p>
+    </footer>
+
+    <script>
+        // Generate a random coupon number and display it
+        const couponElement = document.getElementById('coupon');
+        const couponNumber = Math.floor(Math.random() * 1000000); // Generates a random number from 0 to 999999
+        couponElement.textContent = couponNumber;
+    </script>
+</body>
+</html>

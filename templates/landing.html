@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leftover Food Marketplace</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Set a background color */
+            background-image: url("{{ url_for('static', filename='background_image.jpg') }}"); /* Background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(178, 15, 15, 0.7); /* Translucent background color for header */
+            color: white;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 14px;
+            background-color: rgba(82, 35, 31, 0.7); /* Translucent background color for footer */
+            color: white;
+            position: relative; /* Add relative positioning to allow absolute positioning of contact details */
+        }
+        
+        .contact-details {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-align: left;
+        }
+        
+        /* Main Container Styles */
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align to the left */
+            padding: 50px;
+            margin-left: 20px; /* Add some left margin */
+        }
+
+        .main-container > div {
+            width: 60%; /* Adjust width as needed */
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7); /* Translucent background color for content */
+        }
+
+        .main-container h2 {
+            margin-bottom: 10px;
+        }
+
+        .main-container p {
+            margin-bottom: 20px;
+        }
+
+        .main-container .btn {
+            margin-bottom: 20px;
+        }
+
+        /* Button Styles */
+        .btn {
+            background-color: #007bff; /* Button background color */
+            color: white; /* Text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Add border-radius */
+            padding: 10px 20px; /* Adjust padding */
+            font-size: 16px; /* Adjust font size */
+            cursor: pointer;
+            text-decoration: none; /* Remove underline */
+        }
+        
+
+
+        /* Add this to your existing CSS file */
+
+.about-us-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.translucent-box {
+    background-color: rgba(255, 255, 255, 0.7); /* Adjust the transparency as desired */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 0px;
+}
+
+.translucent-box h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.translucent-box p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.translucent-box a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+   
+
+    <header style="background: linear-gradient(135deg, rgba(178, 15, 15, 0.7), rgba(255, 0, 0, 0.7)); padding: 20px; display: flex; justify-content: space-between; align-items: center;">
+        <h1 class="logo" style="font-size: 48px; font-weight: bold; color: white; text-shadow: 2px 2px 4px #000;">Food Mela</h1>
+        <div>
+            <a href="#about-us" style="color: white; text-decoration: none; margin-right: 20px;"><u>About Us</u></a>
+            <a href="#contact-details" style="color: white; text-decoration: none;margin-right: 20px"><u>Contact Us</u></a>
+            <a href="/index" style="color: white; text-decoration: none;"><u>Book Coupons</u></a>
+        </div>
+        <!-- You can add a navigation menu here if needed -->
+    </header>
+       
+  <br> <br>
+
+    <div class="main-container">
+        <div>
+            <h2>Book Coupons</h2>
+            <p>Explore our range of discounted coupons and enjoy delicious meals at affordable prices!</p>
+            <button><a href="/index" class="btn">Book Now</a></button>
+        </div>
+        <br>
+        <br>
+        <div>
+            <h2>Partner with Us!</h2>
+            <p>Join us as a restaurant partner and reach out to a wider audience. Register now and start selling!</p>
+            <button><a href="/restaurant-register" class="btn">Register</a></button>
+            <button><a href="/restaurant-login" class="btn">Log In</a></button>
+        </div>
+
+
+
+       
+    </div>
+
+    <div class="translucent-box" id="about-us">
+        <h2>About Us</h2>
+        <p>We, a team of enthusiastic students from KIIT University, are united by a common purpose: combatting food wastage. Our mission revolves around redistributing surplus, fresh food from local restaurants to offer affordable meals and ensure no one sleeps on an empty stomach.</p>
+        <p>Driven by a deep concern for the alarming issue of food wastage, our initiative strives to bridge the gap between excess food and those in need. By connecting local eateries with individuals seeking budget-friendly, quality meals, we're determined to minimize food scarcity in our community.</p>
+        <p>Our commitment lies in fostering a supportive community where everyone has access to nutritious food. Through our efforts, we aim to provide affordable meals, reduce food wastage, and alleviate hunger in our vicinity.</p>
+        <p><strong>Aim:</strong> To provide economical access to quality food and ensure no one faces food insecurity.</p>
+    </div>
+<br>
+<br>
+<br>
+<br> 
+
+    <div class="translucent-box" id="contact-details">
+        <h2>Contact Us</h2>
+        <p>Email: foodmela15@gmail.com</p>
+        <p>Phone: +91 9660011227</p>
+        <p>For any queries, collaborations, or feedback, feel free to reach out to us! We're always open to discussions and opportunities to make a positive impact together.</p>
+    </div>
+    
+
+
+    
+    <footer>
+        <p>&copy; 2023 Food Mela</p>
+    </footer>
+</body>
+</html>
